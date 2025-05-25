@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="basePath">./logs</Property> <!-- Log files will be created in a 'logs' folder in the project root -->
+        <Property name="logPattern">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${logPattern}"/>
+        </Console>
+
+        <!-- Rolling File Appender -->
+        <RollingFile name="File"
+                     fileName="${basePath}/app.log"
+                     filePattern="${basePath}/app-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${logPattern}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/> <!-- Rollover daily -->
+                <SizeBasedTriggeringPolicy size="10 MB"/> <!-- Or every 10 MB -->
+            </Policies>
+            <DefaultRolloverStrategy max="10"/> <!-- Keep up to 10 archived log files -->
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- Root Logger -->
+        <Root level="INFO"> <!-- Default log level for the entire application -->
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+
+        <!-- Specific package loggers (optional, can be adjusted) -->
+        <Logger name="com.selcuk.TutorialsNinja" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+
+        <!-- Logger for Selenium, set to WARN to reduce verbosity -->
+        <Logger name="org.openqa.selenium" level="WARN" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+         <!-- Logger for TestNG, set to INFO or WARN -->
+        <Logger name="org.testng" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+
+    </Loggers>
+</Configuration>

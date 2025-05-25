@@ -1,0 +1,13 @@
+/app/src/test/java/com/selcuk/TutorialsNinja/base/BaseTest.java
+/app/src/test/java/com/selcuk/TutorialsNinja/reports/ExtentManager.java
+/app/src/test/java/com/selcuk/TutorialsNinja/utils/MyXLSReader.java
+/app/src/test/java/com/selcuk/TutorialsNinja/pages/LoginPage.java
+/app/src/test/java/com/selcuk/TutorialsNinja/reports/ExtentTestManager.java
+/app/src/test/java/com/selcuk/TutorialsNinja/pages/RegisterPage.java
+/app/src/test/java/com/selcuk/TutorialsNinja/pages/AccountSuccessPage.java
+/app/src/test/java/com/selcuk/TutorialsNinja/utils/ElementUtilities.java
+/app/src/test/java/com/selcuk/TutorialsNinja/base/RootPage.java
+/app/src/test/java/com/selcuk/TutorialsNinja/utils/PropertyUtils.java
+/app/src/test/java/com/selcuk/TutorialsNinja/listeners/TestListener.java
+/app/src/test/java/com/selcuk/TutorialsNinja/utils/CommonUtils.java
+/app/src/test/java/com/selcuk/TutorialsNinja/tests/LoginTest.java
